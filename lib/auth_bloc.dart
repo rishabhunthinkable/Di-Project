@@ -5,7 +5,7 @@ import 'package:di_project/repository/google_auth_repo.dart';
 ///It breaks the DRY (don't repeat yourself) principle
 
 class GoogleAuthBloc {
-  ///A service wrapper which provides a way to manage user state inside application.
+  ///A service wrapper which provides a way to manage user auth state inside application.
   late GoogleAuthRepo _authRepo;
   GoogleAuthBloc(){
     _authRepo = GoogleAuthRepo();
