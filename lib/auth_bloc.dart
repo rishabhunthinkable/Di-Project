@@ -1,5 +1,4 @@
 import 'package:di_project/repository/auth_repo.dart';
-import 'package:di_project/repository/firebase_auth_repo.dart';
 import 'package:di_project/repository/google_auth_repo.dart';
 
 
