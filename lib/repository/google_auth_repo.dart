@@ -1,10 +1,15 @@
 class GoogleAuthRepo{
+  static const String TAG = "GoogleAuthRepo";
   void login(String email,String password){
-    //code to login google user
+    print('$TAG Logged in with $email and $password');
   }
   void logout(){
-    //code to logout google user
+    print('$TAG Logged out');
   }
-  void signIn(){}
-  void signUp(){}
+  void delete(){
+    print('$TAG user deleted');
+  }
+  void signUp(){
+    print('$TAG user signup');
+  }
 }

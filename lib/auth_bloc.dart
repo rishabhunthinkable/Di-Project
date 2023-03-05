@@ -18,8 +18,8 @@ class GoogleAuthBloc {
     _authRepo.logout();
   }
 
-  void signInUser(){
-    _authRepo.signIn();
+  void deleteUser(){
+    _authRepo.delete();
   }
 
   void signUpUser(){
@@ -42,8 +42,8 @@ class FirebaseAuthBloc {
     _authRepo.logout();
   }
 
-  void signInUser(){
-    _authRepo.signIn();
+  void deleteUser(){
+    _authRepo.delete();
   }
 
   void signUpUser(){
