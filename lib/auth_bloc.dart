@@ -4,12 +4,9 @@ import 'package:di_project/repository/google_auth_repo.dart';
 
 class AuthBloc {
   ///A service wrapper which provides a way to manage user state inside application.
-  late AuthRepo _authRepo;
+  final AuthRepo _authRepo;
 
-  AuthBloc() {
-    _authRepo = GoogleAuthRepo();
-    // _authRepo = FirebaseAuthRepo();
-  }
+  AuthBloc(this._authRepo);
 
   void loginUser(String email, String password) {
     _authRepo.login(email, password);
