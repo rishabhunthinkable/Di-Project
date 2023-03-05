@@ -1,10 +1,13 @@
 
-import 'package:di_project/auth_bloc.dart';
+import 'package:di_project/blocs/auth_bloc.dart';
 import 'package:di_project/repository/auth_repo.dart';
 import 'package:di_project/repository/firebase_auth_repo.dart';
 import 'package:di_project/repository/google_auth_repo.dart';
 
+import 'di/di.dart';
+
 void main() async{
+  configureDependencies();
   print('Main Started');
   AuthRepo googleAuthRepo = GoogleAuthRepo();
   // AuthRepo firebaseAuthRepo = FirebaseAuthRepo();

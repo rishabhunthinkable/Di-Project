@@ -1,5 +1,7 @@
 import 'package:di_project/repository/auth_repo.dart';
-
+import 'package:injectable/injectable.dart';
+@named
+@Singleton(as: AuthRepo)
 class GoogleAuthRepo extends AuthRepo {
   static const String TAG = "GoogleAuthRepo";
   @override
