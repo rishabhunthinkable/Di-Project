@@ -1,10 +1,25 @@
-class FirebaseAuthRepo{
-  void login(String email,String password){
-    //code to login firebase user
+import 'package:di_project/repository/auth_repo.dart';
+
+class FirebaseAuthRepo extends AuthRepo {
+  static const String TAG = "GoogleAuthRepo";
+
+  @override
+  void login(String email, String password) {
+    print('$TAG: user logged in with $email and $password');
   }
-  void logout(){
-    //code to logout user
+
+  @override
+  void logout() {
+    print('$TAG: user logged out');
   }
-  void signIn(){}
-  void signUp(){}
+
+  @override
+  void signUp() {
+    print('$TAG: user signUp');
+  }
+
+  @override
+  void deleteUser() {
+    print('$TAG: user deleted');
+  }
 }

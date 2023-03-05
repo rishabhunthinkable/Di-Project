@@ -1,10 +1,24 @@
-class GoogleAuthRepo{
-  void login(String email,String password){
-    //code to login google user
+import 'package:di_project/repository/auth_repo.dart';
+
+class GoogleAuthRepo extends AuthRepo {
+  static const String TAG = "GoogleAuthRepo";
+  @override
+  void login(String email, String password) {
+    print('$TAG: user logged in with $email and $password');
   }
-  void logout(){
-    //code to logout google user
+
+  @override
+  void logout() {
+    print('$TAG: user logged out');
+
   }
-  void signIn(){}
-  void signUp(){}
+  @override
+  void deleteUser() {
+    print('$TAG: user deleted');
+  }
+
+  @override
+  void signUp() {
+    print('$TAG: user signUp');
+  }
 }
