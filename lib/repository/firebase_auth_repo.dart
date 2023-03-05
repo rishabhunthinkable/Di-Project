@@ -14,22 +14,22 @@ class FirebaseAuthRepo extends AuthRepo {
   FirebaseAuthRepo(this._firebaseAuth);
   @override
   void login(String email, String password) {
-    log('$TAG: user logged in with $email and $password');
+    _firebaseAuth.login(email, password);
   }
 
   @override
   void logout() {
-    log('$TAG: user logged out');
+    _firebaseAuth.logout();
   }
 
   @override
   void signUp() {
-    log('$TAG: user signUp');
+    _firebaseAuth.signUp();
   }
 
   @override
   void deleteUser() {
-    log('$TAG: user deleted');
+    _firebaseAuth.deleteUser();
   }
 }
 

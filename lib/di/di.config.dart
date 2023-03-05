@@ -9,11 +9,11 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../blocs/auth_bloc.dart' as _i3;
-import '../repository/auth_repo.dart' as _i4;
-import '../repository/firebase_auth_repo.dart' as _i8;
-import '../repository/google_auth_repo.dart' as _i5;
-import '../third_party_packages/firebase_auth.dart' as _i6;
-import '../third_party_packages/google_auth.dart' as _i7;
+import '../repository/auth_repo.dart' as _i6;
+import '../repository/firebase_auth_repo.dart' as _i7;
+import '../repository/google_auth_repo.dart' as _i8;
+import '../third_party_packages/firebase_auth.dart' as _i4;
+import '../third_party_packages/google_auth.dart' as _i5;
 import 'di_module.dart' as _i9;
 
 const String _dev = 'dev';
@@ -35,16 +35,22 @@ _i1.GetIt $init(
     () => _i3.AuthBloc(),
     registerFor: {_dev},
   );
-  gh.singleton<_i4.AuthRepo>(
-    _i5.GoogleAuthRepo(),
-    instanceName: 'GoogleAuthRepo',
+  gh.lazySingletonAsync<_i4.FirebaseAuth>(
+    () => diModule.firebaseAuth,
     registerFor: {_dev},
   );
-  gh.lazySingletonAsync<_i6.FirebaseAuth>(() => diModule.firebaseAuth);
-  gh.lazySingletonAsync<_i7.GoogleAuth>(() => diModule.googleAuth);
-  gh.singletonAsync<_i4.AuthRepo>(
-    () async => _i8.FirebaseAuthRepo(await get.getAsync<_i6.FirebaseAuth>()),
+  gh.lazySingletonAsync<_i5.GoogleAuth>(
+    () => diModule.googleAuth,
+    registerFor: {_dev},
+  );
+  gh.singletonAsync<_i6.AuthRepo>(
+    () async => _i7.FirebaseAuthRepo(await get.getAsync<_i4.FirebaseAuth>()),
     instanceName: 'FirebaseAuthRepo',
+    registerFor: {_dev},
+  );
+  gh.singletonAsync<_i6.AuthRepo>(
+    () async => _i8.GoogleAuthRepo(await get.getAsync<_i5.GoogleAuth>()),
+    instanceName: 'GoogleAuthRepo',
     registerFor: {_dev},
   );
   return get;
