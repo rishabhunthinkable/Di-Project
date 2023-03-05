@@ -10,4 +10,4 @@ GetIt getIt = GetIt.instance;
     asExtension: false,
     usesNullSafety: true,
     preferRelativeImports: true)
-void configureDependencies() => $init(getIt);
+ configureDependencies() => $init(getIt,environment: dev.name);
