@@ -11,25 +11,26 @@ import '../third_party_packages/firebase_auth.dart';
 class FirebaseAuthRepo extends AuthRepo {
   static const String TAG = "FirebaseAuthRepo Dev";
   final FirebaseAuth _firebaseAuth;
+
   FirebaseAuthRepo(this._firebaseAuth);
+
   @override
-  void login(String email, String password) {
-    _firebaseAuth.login(email, password);
+  Future<void> login(String email, String password) async {
+    await _firebaseAuth.login(email, password);
   }
 
   @override
-  void logout() {
-    _firebaseAuth.logout();
+  Future<void> logout() async {
+    await _firebaseAuth.logout();
   }
 
   @override
-  void signUp() {
-    _firebaseAuth.signUp();
+  Future<void> signUp() async {
+    await _firebaseAuth.signUp();
   }
 
   @override
-  void deleteUser() {
-    _firebaseAuth.deleteUser();
+  Future<void> deleteUser() async {
+    await _firebaseAuth.deleteUser();
   }
 }
-

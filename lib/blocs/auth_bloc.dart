@@ -7,23 +7,23 @@ class AuthBloc {
   ///A service wrapper which provides a way to manage user state inside application.
   AuthRepo? _authRepo;
 
-  void setAuthenticationService(AuthRepo repo){
+  void setAuthenticationService(AuthRepo repo) {
     _authRepo = repo;
   }
 
-  void loginUser(String email, String password) {
-    _authRepo?.login(email, password);
+  Future<void> loginUser(String email, String password) async {
+    await _authRepo?.login(email, password);
   }
 
-  void logoutUser() {
-    _authRepo?.logout();
+  Future<void> logoutUser() async {
+    await _authRepo?.logout();
   }
 
-  void deleteUser() {
-    _authRepo?.deleteUser();
+  Future<void> deleteUser() async {
+    await _authRepo?.deleteUser();
   }
 
-  void signUpUser() {
-    _authRepo?.signUp();
+  Future<void> signUpUser() async {
+    await _authRepo?.signUp();
   }
 }

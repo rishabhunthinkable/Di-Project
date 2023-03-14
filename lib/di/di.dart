@@ -9,5 +9,6 @@ GetIt getIt = GetIt.instance;
     initializerName: r'$init',
     asExtension: false,
     usesNullSafety: true,
-    preferRelativeImports: true)
+    preferRelativeImports: true
+)
  configureDependencies() => $init(getIt,environment: dev.name);

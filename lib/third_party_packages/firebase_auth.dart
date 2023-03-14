@@ -10,19 +10,23 @@ class FirebaseAuth{
     print('$TAG: Service initialised');
     return FirebaseAuth._();
   }
-  void login(String email, String password) {
+  Future<void> login(String email, String password) async{
+    await Future.delayed(const Duration(seconds: 1));
     print('$TAG: user logged in with $email and $password');
   }
 
-  void logout() {
+  Future<void> logout()async{
+    await Future.delayed(const Duration(seconds: 1));
     print('$TAG: user logged out');
   }
 
-  void signUp() {
+  Future<void> signUp() async{
+    await Future.delayed(const Duration(seconds: 1));
     print('$TAG: user signUp');
   }
 
-  void deleteUser() {
+  Future<void> deleteUser() async{
+    await Future.delayed(const Duration(seconds: 1));
     print('$TAG: user deleted');
   }
 }

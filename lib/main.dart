@@ -14,14 +14,10 @@ void main() async{
   print('Main Started');
   AuthBloc bloc = getIt<AuthBloc>();
   bloc.setAuthenticationService(await getIt.getAsync<AuthRepo>(instanceName: const Named.from(GoogleAuthRepo).type.toString()));
-  await Future.delayed(const Duration(seconds: 1));
-  bloc.loginUser("r@yahoo.co", "22212121");
-  await Future.delayed(const Duration(seconds: 1));
-  bloc.logoutUser();
-  await Future.delayed(const Duration(seconds: 1));
-  bloc.signUpUser();
-  await Future.delayed(const Duration(seconds: 1));
-  bloc.deleteUser();
+  await bloc.loginUser("r@yahoo.co", "22212121");
+  await bloc.logoutUser();
+  await bloc.signUpUser();
+  await bloc.deleteUser();
   print('Main Ended');
 }
 
