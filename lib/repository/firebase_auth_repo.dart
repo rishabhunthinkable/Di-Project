@@ -1,15 +1,21 @@
+import '../third_party_packages/firebase_auth.dart';
+
 class FirebaseAuthRepo{
+  FirebaseAuth? _firebaseAuth;
+  Future<FirebaseAuth> _getFirebaseAuth()async{
+    return _firebaseAuth ??= await FirebaseAuth.instance();
+  }
   static const String TAG = "FirebaseAuthRepo";
-  void login(String email,String password){
-   print('$TAG Logged in with $email and $password');
+  Future<void> login(String email,String password)async{
+    await (await _getFirebaseAuth()).login(email, password);
   }
-  void logout(){
-    print('$TAG Logged out');
+  Future<void> logout()async{
+    await (await _getFirebaseAuth()).logout();
   }
-  void delete(){
-    print('$TAG user deleted');
+  Future<void> delete()async{
+    await (await _getFirebaseAuth()).deleteUser();
   }
-  void signUp(){
-    print('$TAG user signup');
+  Future<void> signUp()async{
+    await (await _getFirebaseAuth()).signUp();
   }
 }

@@ -10,19 +10,19 @@ class GoogleAuthBloc {
   GoogleAuthBloc(){
     _authRepo = GoogleAuthRepo();
   }
-  void loginUser(String name,String email){
+  Future<void> loginUser(String name,String email)async{
     _authRepo.login(name,email);
   }
 
-  void logoutUser(){
+  Future<void> logoutUser()async{
     _authRepo.logout();
   }
 
-  void deleteUser(){
+  Future<void> deleteUser()async{
     _authRepo.delete();
   }
 
-  void signUpUser(){
+  Future<void> signUpUser()async{
     _authRepo.signUp();
   }
 
@@ -34,20 +34,20 @@ class FirebaseAuthBloc {
   FirebaseAuthBloc(){
     _authRepo = FirebaseAuthRepo();
   }
-  void loginUser(String email,String password){
-    _authRepo.login(email,password);
+  Future<void> loginUser(String email,String password)async{
+   await _authRepo.login(email,password);
   }
 
-  void logoutUser(){
-    _authRepo.logout();
+  Future<void> logoutUser()async{
+    await _authRepo.logout();
   }
 
-  void deleteUser(){
-    _authRepo.delete();
+  Future<void> deleteUser()async{
+    await _authRepo.delete();
   }
 
-  void signUpUser(){
-    _authRepo.signUp();
+  Future<void> signUpUser()async{
+    await _authRepo.signUp();
   }
 
 }
