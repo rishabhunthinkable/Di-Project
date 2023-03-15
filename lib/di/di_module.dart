@@ -7,9 +7,11 @@ import '../third_party_packages/firebase_auth.dart';
 @module
 abstract class DiModule{
   @dev
+  @singleton
   Future<FirebaseAuth> get firebaseAuth async => await FirebaseAuth.instance();
 
   @dev
+  @singleton
   Future<GoogleAuth> get googleAuth async => await GoogleAuth.instance();
 
   @lazySingleton
