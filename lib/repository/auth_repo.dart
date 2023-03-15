@@ -1,6 +1,6 @@
 abstract class AuthRepo{
-  void login(String email,String password);
-  void logout();
-  void signUp();
-  void deleteUser();
+  Future<void> login(String email,String password);
+  Future<void> logout();
+  Future<void> signUp();
+  Future<void> deleteUser();
 }

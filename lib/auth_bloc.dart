@@ -1,5 +1,4 @@
 import 'package:di_project/repository/auth_repo.dart';
-import 'package:di_project/repository/google_auth_repo.dart';
 
 
 class AuthBloc {
@@ -8,19 +7,19 @@ class AuthBloc {
 
   AuthBloc(this._authRepo);
 
-  void loginUser(String email, String password) {
-    _authRepo.login(email, password);
+  Future<void> loginUser(String email, String password) async{
+    await _authRepo.login(email, password);
   }
 
-  void logoutUser() {
-    _authRepo.logout();
+  Future<void> logoutUser()async {
+    await _authRepo.logout();
   }
 
-  void deleteUser() {
-    _authRepo.deleteUser();
+  Future<void> deleteUser() async{
+    await _authRepo.deleteUser();
   }
 
-  void signUpUser() {
-    _authRepo.signUp();
+  Future<void> signUpUser() async{
+    await _authRepo.signUp();
   }
 }

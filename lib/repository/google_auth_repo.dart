@@ -7,22 +7,22 @@ class GoogleAuthRepo extends AuthRepo {
   GoogleAuth _googleAuth;
   GoogleAuthRepo(this._googleAuth);
   @override
-  void login(String email, String password) {
-    _googleAuth.login(email, password);
+  Future<void> login(String email, String password)async {
+   await _googleAuth.login(email, password);
   }
 
   @override
-  void logout() {
-    _googleAuth.logout();
+  Future<void> logout() async{
+   await _googleAuth.logout();
   }
 
   @override
-  void signUp() {
-    _googleAuth.signUp();
+  Future<void> signUp() async{
+    await _googleAuth.signUp();
   }
 
   @override
-  void deleteUser() {
-    _googleAuth.deleteUser();
+  Future<void> deleteUser() async{
+    await _googleAuth.deleteUser();
   }
 }
