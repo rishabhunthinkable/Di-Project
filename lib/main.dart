@@ -6,6 +6,7 @@ import 'package:di_project/repository/auth_repo.dart';
 import 'package:di_project/repository/firebase_auth_repo.dart';
 import 'package:di_project/repository/google_auth_repo.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'di/di.dart';
 
@@ -21,3 +22,9 @@ void main() async{
   print('Main Ended');
 }
 
+
+@injectable
+class SharedPrefHelper{
+  late SharedPreferences preference;
+  SharedPrefHelper(this.preference);
+}
