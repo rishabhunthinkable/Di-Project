@@ -38,11 +38,11 @@ _i1.GetIt $init(
     () => _i3.AuthBloc(),
     registerFor: {_dev},
   );
-  gh.factoryAsync<_i4.FirebaseAuth>(
+  gh.singletonAsync<_i4.FirebaseAuth>(
     () => diModule.firebaseAuth,
     registerFor: {_dev},
   );
-  gh.factoryAsync<_i5.GoogleAuth>(
+  gh.singletonAsync<_i5.GoogleAuth>(
     () => diModule.googleAuth,
     registerFor: {_dev},
   );
